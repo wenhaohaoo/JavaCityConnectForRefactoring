@@ -33,6 +33,8 @@ import java.util.Scanner;
 
  * @author Dave Jun
  */
+
+import com.sun.org.apache.xpath.internal.operations.String;
 public class CityConnect {
 
 	/*
@@ -50,6 +52,7 @@ public class CityConnect {
 	private static final String MESSAGE_INVALID_FORMAT = "invalid command format :%1$s";
 	private static final String WELCOME_MESSAGE = "Welcome to SimpleRouteStore!";
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
+	private static final String PROMPT_MESSAGE = "Enter command:";
 
 	// These are the possible command types
 	enum COMMAND_TYPE {
@@ -100,7 +103,7 @@ public class CityConnect {
 	public static void main(String[] args) {
 		showToUser(WELCOME_MESSAGE);
 		while (true) {
-			System.out.print("Enter command:");
+			showToUser(PROMPT_MESSAGE);
 			String command = scanner.nextLine();
 			String userCommand = command;
 			String feedback = executeCommand(userCommand);
